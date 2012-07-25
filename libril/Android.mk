@@ -25,6 +25,10 @@ endif
 
 LOCAL_MODULE:= libril
 
+ifeq ($(BOARD_USES_LEGACY_RIL),true)
+LOCAL_CFLAGS += -DLEGACY_RIL
+endif
+
 include $(BUILD_SHARED_LIBRARY)
 
 
